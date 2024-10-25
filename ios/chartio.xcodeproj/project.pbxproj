@@ -14,6 +14,14 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-chartio-chartioTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-chartio-chartioTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		2EF41C9578804945BEEEADD3 /* Lexend-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CDF544BB198F4D76A1142EC5 /* Lexend-Regular.ttf */; };
+		34C58501CE1B44CAB9CD2CF9 /* Lexend-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 26D77C93664B4207AD865F13 /* Lexend-SemiBold.ttf */; };
+		5CB98E5CAA09412A8F754BE5 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F6C6B691CF3B4611AD8694DE /* Poppins-Regular.ttf */; };
+		74ECCEA0468A43D08DABB2C6 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DA127D5BE2174F94B51CE295 /* Poppins-SemiBold.ttf */; };
+		688FC8B7650A46A19A071516 /* RobotoMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E673CB40E5084BD7B932384D /* RobotoMono-Regular.ttf */; };
+		FC2A8A33FF2F4A02AD7992F0 /* RobotoMono-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66628CCCBBAD4278AB2B7F1B /* RobotoMono-SemiBold.ttf */; };
+		BE16C9D539E4421CB406A172 /* RobotoSlab-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EAC7EEED2F4C459A828E2477 /* RobotoSlab-Regular.ttf */; };
+		9CFE1179465B40FFA5621668 /* RobotoSlab-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6CF84B2667754FD4A0ABFDB5 /* RobotoSlab-SemiBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +53,14 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = chartio/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-chartio-chartioTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chartio-chartioTests.release.xcconfig"; path = "Target Support Files/Pods-chartio-chartioTests/Pods-chartio-chartioTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		CDF544BB198F4D76A1142EC5 /* Lexend-Regular.ttf */ = {isa = PBXFileReference; name = "Lexend-Regular.ttf"; path = "../src/asset/fonts/Lexend-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		26D77C93664B4207AD865F13 /* Lexend-SemiBold.ttf */ = {isa = PBXFileReference; name = "Lexend-SemiBold.ttf"; path = "../src/asset/fonts/Lexend-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F6C6B691CF3B4611AD8694DE /* Poppins-Regular.ttf */ = {isa = PBXFileReference; name = "Poppins-Regular.ttf"; path = "../src/asset/fonts/Poppins-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DA127D5BE2174F94B51CE295 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; name = "Poppins-SemiBold.ttf"; path = "../src/asset/fonts/Poppins-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E673CB40E5084BD7B932384D /* RobotoMono-Regular.ttf */ = {isa = PBXFileReference; name = "RobotoMono-Regular.ttf"; path = "../src/asset/fonts/RobotoMono-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		66628CCCBBAD4278AB2B7F1B /* RobotoMono-SemiBold.ttf */ = {isa = PBXFileReference; name = "RobotoMono-SemiBold.ttf"; path = "../src/asset/fonts/RobotoMono-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EAC7EEED2F4C459A828E2477 /* RobotoSlab-Regular.ttf */ = {isa = PBXFileReference; name = "RobotoSlab-Regular.ttf"; path = "../src/asset/fonts/RobotoSlab-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6CF84B2667754FD4A0ABFDB5 /* RobotoSlab-SemiBold.ttf */ = {isa = PBXFileReference; name = "RobotoSlab-SemiBold.ttf"; path = "../src/asset/fonts/RobotoSlab-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +140,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				47CD83CBF786499A94EE6AAF /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -149,6 +166,22 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		47CD83CBF786499A94EE6AAF /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				CDF544BB198F4D76A1142EC5 /* Lexend-Regular.ttf */,
+				26D77C93664B4207AD865F13 /* Lexend-SemiBold.ttf */,
+				F6C6B691CF3B4611AD8694DE /* Poppins-Regular.ttf */,
+				DA127D5BE2174F94B51CE295 /* Poppins-SemiBold.ttf */,
+				E673CB40E5084BD7B932384D /* RobotoMono-Regular.ttf */,
+				66628CCCBBAD4278AB2B7F1B /* RobotoMono-SemiBold.ttf */,
+				EAC7EEED2F4C459A828E2477 /* RobotoSlab-Regular.ttf */,
+				6CF84B2667754FD4A0ABFDB5 /* RobotoSlab-SemiBold.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -245,6 +278,14 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				2EF41C9578804945BEEEADD3 /* Lexend-Regular.ttf in Resources */,
+				34C58501CE1B44CAB9CD2CF9 /* Lexend-SemiBold.ttf in Resources */,
+				5CB98E5CAA09412A8F754BE5 /* Poppins-Regular.ttf in Resources */,
+				74ECCEA0468A43D08DABB2C6 /* Poppins-SemiBold.ttf in Resources */,
+				688FC8B7650A46A19A071516 /* RobotoMono-Regular.ttf in Resources */,
+				FC2A8A33FF2F4A02AD7992F0 /* RobotoMono-SemiBold.ttf in Resources */,
+				BE16C9D539E4421CB406A172 /* RobotoSlab-Regular.ttf in Resources */,
+				9CFE1179465B40FFA5621668 /* RobotoSlab-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
