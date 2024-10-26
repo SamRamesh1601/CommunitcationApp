@@ -27,7 +27,7 @@ export const style = StyleSheet.create({
   OverlayIcon: {
     padding: Fonts.ModerateScale(3),
     borderRadius: 150,
-    bottom: '35%',
+    bottom: '50%',
     right: '15%',
     position: 'absolute',
     backgroundColor: Theme.colors.white,
@@ -79,5 +79,76 @@ export const style = StyleSheet.create({
     fontFamily: Fonts.Bold.primary,
     fontSize: Fonts.ModerateScale(6),
     textTransform: 'uppercase',
+  },
+});
+
+export const messageStyles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#000',
+  },
+  innerContainer: {
+    flex: 1,
+  },
+  messagesContainer: {
+    flex: 1,
+  },
+  sentMessage: {
+    alignSelf: 'flex-end',
+    backgroundColor: Theme.colors.lightPrimary,
+    borderRadius: 15,
+    elevation: 0.2,
+    borderBottomRightRadius: 0,
+    paddingVertical: 8,
+    rowGap: 10,
+    paddingHorizontal: 12,
+    maxWidth: '80%',
+  },
+  receivedMessage: {
+    alignSelf: 'flex-start',
+    backgroundColor: Theme.colors.secondary,
+    borderRadius: 15,
+    elevation: 0.2,
+    borderBottomLeftRadius: 0,
+    paddingVertical: 8,
+    rowGap: 10,
+    paddingHorizontal: 12,
+    marginVertical: 5,
+    maxWidth: '80%',
+  },
+  messageText: {
+    color: Theme.colors.black,
+    fontSize: Fonts.ModerateScale(12),
+  },
+  image: {
+    width: 200,
+    height: 200,
+    borderRadius: 15,
+  },
+  video: {
+    width: 200,
+    height: 200,
+    borderRadius: 15,
+  },
+  black: {
+    color: '#222',
+  },
+  white: {
+    color: '#FFF',
+  },
+  scrollToEndButton: {
+    position: 'absolute',
+    bottom: 20,
+    right: 20,
+    backgroundColor: '#6200ea',
+    borderRadius: 25,
+    padding: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    elevation: 5,
+  },
+  listContentContainer: {
+    marginVertical: 5,
+    rowGap: 5,
   },
 });

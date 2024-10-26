@@ -5,6 +5,7 @@ import {
   ViewStyle,
   ImageProps,
   TextProps,
+  RefreshControlProps,
 } from 'react-native';
 
 export interface AppButtonProps extends PressableProps {
@@ -76,4 +77,8 @@ export interface AppBottomSheetProps {
   snapPoints?: string[];
   children: React.ReactNode;
   initialIndex?: number;
+}
+
+export interface AppRefresherProps extends RefreshControlProps {
+  HandleRefresh: () => void;
 }
