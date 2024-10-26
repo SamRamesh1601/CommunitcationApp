@@ -22,6 +22,8 @@ export interface AppButtonOpacityProps extends TouchableOpacityProps {
 
 export interface AppIconProps {
   name: string;
+  size?: number;
+  color?: string;
   style?: ViewStyle | TextStyle;
   group?:
     | 'FontAwesV1'
@@ -45,7 +47,7 @@ export interface AppImageProps extends ImageProps {
 }
 
 export interface AppTextProps extends TextProps {
-  text: string;
+  text?: string;
   style: TextStyle;
 }
 

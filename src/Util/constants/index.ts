@@ -1,4 +1,5 @@
-import {SlideItemProps} from '../../modules/auth/types';
+import type {ImageSourcePropType} from 'react-native';
+import type {SlideItemProps} from '../../modules/auth/types';
 
 export const useData = () => {
   const IntroData: SlideItemProps[] = [
@@ -186,3 +187,101 @@ export const useData = () => {
     UserData,
   };
 };
+
+export const DefaultPhoneNumber = '9360908285';
+
+export const DefaultUserImage: ImageSourcePropType = {
+  uri: 'https://mighty.tools/mockmind-api/content/human/60.jpg',
+};
+
+export const ChatHistoryList = [
+  {
+    id: 'msg_1',
+    senderId: 'user_1',
+    text: 'Hey Bob! Check this out.',
+
+    timestamp: '2023-10-25T14:30:00Z',
+    media: [
+      {
+        type: 'image',
+        url: 'https://example.com/media/image1.jpg',
+        thumbnail: 'https://example.com/media/thumb_image1.jpg',
+      },
+    ],
+  },
+  {
+    id: 'msg_2',
+    senderId: 'user_2',
+    text: 'Nice picture! Where was this taken?',
+    timestamp: '2023-10-25T14:31:00Z',
+    media: [],
+  },
+  {
+    id: 'msg_3',
+    senderId: 'user_1',
+    text: 'At the beach last summer!',
+    timestamp: '2023-10-25T14:32:00Z',
+    media: [
+      {
+        type: 'video',
+        url: 'https://example.com/media/video1.mp4',
+        thumbnail: 'https://example.com/media/thumb_video1.jpg',
+      },
+    ],
+  },
+  {
+    id: 'msg_4',
+    senderId: 'user_2',
+    text: "I can't wait for the summer!",
+    timestamp: '2023-10-25T14:33:00Z',
+    media: [],
+  },
+  {
+    id: 'msg_5',
+    senderId: 'user_1',
+    text: 'Same here! Do you have any plans?',
+    timestamp: '2023-10-25T14:34:00Z',
+    media: [],
+  },
+  {
+    id: 'msg_6',
+    senderId: 'user_2',
+    text: 'Thinking of going to the mountains this year.',
+    timestamp: '2023-10-25T14:35:00Z',
+    media: [],
+  },
+  {
+    id: 'msg_7',
+    senderId: 'user_1',
+    text: 'That sounds amazing! I love hiking.',
+    timestamp: '2023-10-25T14:36:00Z',
+    media: [],
+  },
+  {
+    id: 'msg_8',
+    senderId: 'user_2',
+    text: 'Have you been to any good trails recently?',
+    timestamp: '2023-10-25T14:37:00Z',
+    media: [],
+  },
+  {
+    id: 'msg_9',
+    senderId: 'user_1',
+    text: 'Yeah, I hiked at Redwood last month! The views were breathtaking.',
+    timestamp: '2023-10-25T14:38:00Z',
+    media: [
+      {
+        type: 'image',
+        url: 'https://example.com/media/image2.jpg',
+        thumbnail: 'https://example.com/media/thumb_image2.jpg',
+      },
+    ],
+  },
+  {
+    id: 'msg_10',
+    senderId: 'user_2',
+    text: 'I need to check that out! Thanks for the recommendation.',
+    timestamp: '2023-10-25T14:39:00Z',
+    media: [],
+  },
+];
