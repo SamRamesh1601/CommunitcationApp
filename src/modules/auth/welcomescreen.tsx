@@ -56,7 +56,7 @@ export default function WelcomeScreen() {
         ) : (
           <AppButtonOpacity
             title="Let's Started"
-            onPress={() => HandleCommonNavigate('UserHome')}
+            onPress={() => HandleCommonNavigate('User')}
             style={styles.loginButton}
             textStyle={styles.loginButtonText}
           />

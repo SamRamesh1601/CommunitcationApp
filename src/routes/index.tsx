@@ -21,7 +21,7 @@ export default function RouteNavigation() {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="Chats" component={ChatRoute} />
-      <Stack.Screen name="UserHome" component={UserRoute} />
+      <Stack.Screen name="User" component={UserRoute} />
       <Stack.Screen name="Notification" component={NotificationScreen} />
     </Stack.Navigator>
   );

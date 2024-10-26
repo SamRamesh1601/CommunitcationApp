@@ -260,7 +260,7 @@ export default function ChatScreen() {
           </AppButton>
           <AppButton
             title={''}
-            onPress={() => HandleCommonNavigate('UserHome')}
+            onPress={() => HandleCommonNavigate('User')}
             style={style.HomeIcon}>
             <AppIcon group={'Octi'} color={Theme.colors.black} name="home" />
           </AppButton>
