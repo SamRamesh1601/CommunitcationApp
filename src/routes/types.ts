@@ -1,3 +1,5 @@
+import {BottomNavigationProps} from 'react-native-paper';
+
 export type RootStackParamList = {
   Auth: undefined;
   User: undefined;
@@ -7,6 +9,7 @@ export type RootStackParamList = {
 
 export type UserRouteParamList = {
   Dashboard: undefined;
+  UserRoute: undefined;
 };
 
 export type ChatRouteParamList = {
@@ -19,4 +22,10 @@ export type AuthRouteParamList = {
   Login: undefined;
   Register: undefined;
   Forgot: undefined;
+};
+
+export type DashBoardRouteParamList = {
+  Home: undefined;
+  Search: undefined;
+  Profile: undefined;
 };

@@ -10,19 +10,25 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function RouteNavigation() {
   const {isAuthenticated} = useAppContext();
-  console.log(isAuthenticated);
-
-  if (isAuthenticated) {
-    <Stack.Navigator screenOptions={{headerShown: false}}>
-      <Stack.Screen name="Auth" component={AuthRoute} />;
-    </Stack.Navigator>;
-  }
 
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
-      <Stack.Screen name="Chats" component={ChatRoute} />
       <Stack.Screen name="User" component={UserRoute} />
       <Stack.Screen name="Notification" component={NotificationScreen} />
     </Stack.Navigator>
   );
+}
+
+// ### Completed Routes Designs
+
+{
+  /* if (isAuthenticated) {
+  <Stack.Navigator screenOptions={{headerShown: false}}>
+    <Stack.Screen name="Auth" component={AuthRoute} />;
+  </Stack.Navigator>;
+}*/
+}
+
+{
+  /* <Stack.Screen name="Chats" component={ChatRoute} /> */
 }

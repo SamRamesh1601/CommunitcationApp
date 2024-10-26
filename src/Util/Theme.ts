@@ -53,6 +53,8 @@ export const Theme = {
           dark: '#111',
           darken: '#FFA33C',
           magic: '#FFFB73',
+          Background: '#0B192C',
+          BarColor: '#EEE2DE',
         }
       : {
           primary: 'red',
@@ -60,9 +62,12 @@ export const Theme = {
           dark: '#333',
           darken: 'yellow',
           magic: 'green',
+          BarColor: '#0B192C',
+          Background: '#D4BEE4',
         }),
     lightPrimary: '#FFEAE3',
     lightBlue: '#00A9FF',
+    darkPrimary: '#007BFF',
     white: '#FFF',
     gray: '#666',
     lightGray: 'lighgray',

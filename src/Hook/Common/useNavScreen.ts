@@ -1,6 +1,7 @@
 import {NavigationProp, useNavigation} from '@react-navigation/native';
 import {
   AuthRouteParamList,
+  DashBoardRouteParamList,
   RootStackParamList,
   UserRouteParamList,
 } from '../../routes/types';
@@ -9,6 +10,8 @@ export default function useNavScreen() {
   const authNavigation = useNavigation<NavigationProp<AuthRouteParamList>>();
   const commonNavigation = useNavigation<NavigationProp<RootStackParamList>>();
   const userNavigation = useNavigation<NavigationProp<UserRouteParamList>>();
+  const DashBoardNavigation =
+    useNavigation<NavigationProp<DashBoardRouteParamList>>();
 
   const HandleAuthNavigate = (name: keyof AuthRouteParamList) => {
     authNavigation.navigate(name);
@@ -21,6 +24,10 @@ export default function useNavScreen() {
     userNavigation.navigate(name);
   };
 
+  const HandleDashBoardNavigation = (name: keyof DashBoardRouteParamList) => {
+    DashBoardNavigation.navigate(name);
+  };
+
   return {
     authNavigation,
     commonNavigation,
@@ -28,5 +35,6 @@ export default function useNavScreen() {
     HandleAuthNavigate,
     HandleCommonNavigate,
     HandleUserNavigate,
+    HandleDashBoardNavigation,
   };
 }
