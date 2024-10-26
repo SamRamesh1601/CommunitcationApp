@@ -1,3 +1,4 @@
+import React from 'react';
 import {Linking} from 'react-native';
 import {DefaultPhoneNumber} from './constants';
 
@@ -45,8 +46,6 @@ export const HandleMessage = (number: string) => {
   }
 };
 
-import {useMemo} from 'react';
-
 const isEmptyString = (value: any) =>
   typeof value === 'string' && value.trim() === '';
 const isEmptyArray = (value: any) => Array.isArray(value) && value.length === 0;
@@ -57,19 +56,19 @@ const isEmptyObject = (value: any) =>
   Object.keys(Headers).length === 0;
 
 export const useCheckData = (data: any) => {
-  return useMemo(() => {
+  return React.useMemo(() => {
     if (data === null || data === undefined) {
-      return false; // null or undefined
+      return false;
     }
     if (isEmptyString(data)) {
-      return false; // empty string
+      return false;
     }
     if (isEmptyArray(data)) {
-      return false; // empty array
+      return false;
     }
     if (isEmptyObject(data)) {
-      return false; // empty object
+      return false;
     }
-    return true; // valid data
+    return true;
   }, [data]);
 };
