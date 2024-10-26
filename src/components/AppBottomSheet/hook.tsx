@@ -4,16 +4,13 @@ import React from 'react';
 export default function useAppBottomSheet() {
   const bottomSheetRef = React.useRef<BottomSheetModal>(null);
 
-  const HandlePress = React.useCallback(() => {
-    bottomSheetRef.current?.present();
-  }, []);
-
-  const HandleOpen = React.useCallback(() => {
+  const HandleOpen = () => {
     bottomSheetRef.current?.expand();
-  }, []);
+  };
 
-  const HandleClose = React.useCallback(() => {
+  const HandleClose = () => {
     bottomSheetRef.current?.close();
-  }, []);
-  return {bottomSheetRef, HandlePress, HandleOpen, HandleClose};
+  };
+
+  return {bottomSheetRef, HandleOpen, HandleClose};
 }

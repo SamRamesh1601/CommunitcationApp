@@ -1,12 +1,8 @@
-import Config from '../../Util/constants/constants_data.json';
 import {ChatStateProps} from '../../modules/chat/types';
-import {useData} from '../../Util/constants';
+import {ChatHistoryList, useData} from '../../Util/constants';
 import React from 'react';
 
 export default function useChat() {
-  // Data Produces For Testing
-
-  //   const UserData = Config.photographers;
   const {UserData} = useData();
 
   const [state, setState] = React.useState<ChatStateProps>({
@@ -14,6 +10,7 @@ export default function useChat() {
     selectedPerson: {},
     phtographerList: {},
     chatHistoryList: {},
+    chatPreviousHistoryList: [],
     refreshing: false,
   });
   const HandleNavigation = (item: any) => {
@@ -49,6 +46,7 @@ export default function useChat() {
       ...prev,
       phtographerList: UserData,
       chatHistoryList: UserData,
+      chatPreviousHistoryList: ChatHistoryList,
     }));
   }, []);
 

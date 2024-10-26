@@ -1,6 +1,6 @@
 // CustomBottomSheet.tsx
 import React, {useCallback, useMemo, useRef} from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View, StyleSheet, TouchableOpacity, Text} from 'react-native';
 import BottomSheet from '@gorhom/bottom-sheet';
 import {AppBottomSheetProps} from '../types';
 import useAppBottomSheet from './hook';
@@ -8,16 +8,30 @@ import useAppBottomSheet from './hook';
 export default function AppBottomSheet({
   snapPoints = ['1%', '25%', '50%'],
   children,
-  initialIndex = 1,
+  initialIndex = -1,
 }: AppBottomSheetProps) {
   const {bottomSheetRef, HandleClose, HandleOpen} = useAppBottomSheet();
 
   return (
     <BottomSheet
       ref={bottomSheetRef}
-      index={-1}
-      snapPoints={snapPoints}
-      onClose={HandleClose}>
+      index={initialIndex}
+      keyboardBehavior={'interactive'}
+      style={{
+        flex: 1,
+      }}
+      backgroundStyle={{
+        backgroundColor: 'red',
+      }}
+      enablePanDownToClose
+      snapPoints={snapPoints}>
+      <View style={{padding: 20}}>
+        <Text style={{fontSize: 18, fontWeight: 'bold'}}>Title</Text>
+        <TouchableOpacity onPress={() => bottomSheetRef?.current?.close()}>
+          <Text style={{color: 'white'}}>Close</Text>
+        </TouchableOpacity>
+        {children || <Text>Your custom content goes here!</Text>}
+      </View>
       {children}
     </BottomSheet>
   );

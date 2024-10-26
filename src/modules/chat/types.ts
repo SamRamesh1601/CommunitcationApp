@@ -19,6 +19,7 @@ export interface ChatStateProps {
   selectedPerson: any | null;
   phtographerList: any;
   chatHistoryList: any;
+  chatPreviousHistoryList: any;
   refreshing: boolean;
 }
 
