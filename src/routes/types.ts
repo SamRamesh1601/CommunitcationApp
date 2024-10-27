@@ -25,7 +25,9 @@ export type AuthRouteParamList = {
 };
 
 export type DashBoardRouteParamList = {
+  Dashboard: undefined;
   Home: undefined;
   Search: undefined;
+  Create: undefined;
   Profile: undefined;
 };

@@ -63,7 +63,7 @@ export default function ChatScreen() {
   } = useChat();
 
   function OnTest() {
-    console.log('working');
+    console.warn('working');
   }
   const {HandleCommonNavigate, HandleAuthNavigate} = useNavScreen();
 

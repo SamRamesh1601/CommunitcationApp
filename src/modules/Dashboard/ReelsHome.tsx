@@ -16,7 +16,7 @@ import {
 import React, {useState, useEffect, useRef, useCallback} from 'react';
 import Video from 'react-native-video';
 import ReelList from '../../Components/Tab/ReelList';
-import {styles} from './style';
+import {styles} from '../common/style';
 
 const {height: windowHeight} = Dimensions.get('window');
 

@@ -28,6 +28,8 @@ import {useNavigation} from '@react-navigation/native';
 import Video from 'react-native-video';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import ReelList from '../../Components/Tab/ReelList';
+import AppImage from '../../Components/AppImage';
+import AppText from '../../Components/AppText';
 
 const {width, height} = Dimensions.get('window');
 const ITEM_SIZE = height * 0.089;
@@ -43,24 +45,27 @@ const ProfilePostTab = () => {
       numColumns={2}
       keyExtractor={(item, index) => index.toString()}
       renderToHardwareTextureAndroid
-      contentContainerStyle={styles.imageGrid}
+      contentContainerStyle={{}}
       onEndReachedThreshold={0.5}
       initialNumToRender={3}
       maxToRenderPerBatch={2}
-      // columnWrapperStyle={{
-      //   justifyContent: 'centter',
-      //   alignItems: 'start',
-      //   width: width,
-      //   columnGap: 5,
-      // }}
       renderItem={({item, index}) => {
-        return <ShortVideoItem item={item} indexValues={index} />;
+        if (item) return null;
+        return (
+          <View>
+            <AppText style={{}}>{index}</AppText>
+          </View>
+        );
       }}
     />
   );
 };
 
-const ProfilePostScreen = () => <ReelList postList={Config.PostList} />;
+const ProfilePostScreen = () => {
+  <View>
+    <AppText style={{}}>Profile Post Screen</AppText>
+  </View>;
+};
 
 export default function UserProfileScreen() {
   const [user, setUserData] = useState({
@@ -101,7 +106,6 @@ export default function UserProfileScreen() {
   });
   const {navigate} = useNavigation();
   // const handleChatScreen = () => {
-  //   goBack();
   //   navigate('Chat');
   // };
   // const handleCallNow = () => {
@@ -119,7 +123,7 @@ export default function UserProfileScreen() {
   return (
     <ScrollView showsVerticalScrollIndicator={false} style={styles.container}>
       <View style={styles.header}>
-        <TouchableOpacity onPress={goBack}>
+        <TouchableOpacity>
           <MaterialIcons
             style={{
               color: '#050505',
@@ -139,13 +143,10 @@ export default function UserProfileScreen() {
         </TouchableOpacity>
       </View>
       <View style={styles.profileContainer}>
-        <LoadingImageCache
-          source={user.profileImage}
-          style={{
-            ...styles.profilePic,
-            width: 150,
-            hight: 150,
-          }}
+        <AppImage
+          path={user.profileImage}
+          imageType={'online'}
+          wrapperstyle={styles.profilePic}
         />
         <Text style={styles.name}>{user.name}</Text>
         <Text style={styles.title}>{user.title}</Text>
@@ -173,7 +174,7 @@ export default function UserProfileScreen() {
           </View>
         </View>
         <View style={styles.buttonContainer}>
-          <TouchableOpacity onPress={handleChatScreen}>
+          <TouchableOpacity>
             <View
               style={{
                 paddingVertical: 12,
@@ -231,7 +232,7 @@ export default function UserProfileScreen() {
               </Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity onPress={handleCallNow}>
+          <TouchableOpacity>
             <View
               style={{
                 paddingVertical: 12,
@@ -265,17 +266,15 @@ export default function UserProfileScreen() {
         screenOptions={{
           headerShown: false,
           tabBarStyle: {backgroundColor: '#000'},
-          tabBarContentContainerStyle: {backgroundColor: '#000'},
           tabBarActiveTintColor: '#D20062',
           tabBarItemStyle: {
             flexDirection: 'row',
             justifyContent: 'center',
             alignItems: 'center',
           },
-          tabBarIndicatorStyle: {backgroundColor: '#D20062'},
           tabBarInactiveTintColor: '#FFF',
         }}>
-        <Tab.Screen
+        {/* <Tab.Screen
           name="Reel"
           component={ProfilePostTab}
           options={{
@@ -292,7 +291,7 @@ export default function UserProfileScreen() {
               <Octicons name="container" color={'#D20062'} size={20} />
             ),
           }}
-        />
+        /> */}
       </Tab.Navigator>
       <View
         style={{
@@ -302,6 +301,7 @@ export default function UserProfileScreen() {
   );
 }
 
+//@ts-ignore
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -340,7 +340,6 @@ const styles = StyleSheet.create({
   location: {
     fontSize: 13,
     fontFamily: 'Lexend-Regular',
-    fontFamily: 'Poppins-SemiBold',
     color: '#222',
   },
   statsContainer: {

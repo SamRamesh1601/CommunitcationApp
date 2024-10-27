@@ -32,7 +32,7 @@ const SearchScreen = () => {
           borderRadius: 30,
           ...styles.containerStyleSpaceBetween,
         }}>
-        <TouchableOpacity onPress={goBack}>
+        <TouchableOpacity>
           <View
             style={{
               padding: 4,

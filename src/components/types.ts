@@ -21,24 +21,26 @@ export interface AppButtonOpacityProps extends TouchableOpacityProps {
   children?: React.ReactNode;
 }
 
+export type AppGroupIconProps =
+  | 'FontAwesV1'
+  | 'FontAwesV5'
+  | 'FontAwesV6'
+  | 'MatIcon'
+  | 'Ioni'
+  | 'Octi'
+  | 'Ant'
+  | 'Fonti'
+  | 'MatCom'
+  | 'Feat'
+  | 'SimLine'
+  | 'Ent';
+
 export interface AppIconProps {
   name: string;
   size?: number;
   color?: string;
-  style?: ViewStyle | TextStyle;
-  group?:
-    | 'FontAwesV1'
-    | 'FontAwesV5'
-    | 'FontAwesV6'
-    | 'MatIcon'
-    | 'Ioni'
-    | 'Octi'
-    | 'Ant'
-    | 'Fonti'
-    | 'MatCom'
-    | 'Feat'
-    | 'SimLine'
-    | 'Ent';
+  style?: ViewStyle | TextStyle | any;
+  group?: AppGroupIconProps;
 }
 
 export interface AppImageProps extends ImageProps {

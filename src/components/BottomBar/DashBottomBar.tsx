@@ -34,24 +34,24 @@ export default function DashBoardBottomBar() {
       </AppButton>
       <AppButton
         style={style.button}
-        onPress={() => HandleDashBoardNavigation('Profile')}>
+        onPress={() => HandleDashBoardNavigation('Create')}>
         <AppIcon
           color={Theme.colors.BarColor}
           style={style.IconStyle}
           group={'MatCom'}
           name="apple-keyboard-command"
         />
-        {/* <AppText style={style.buttonText}>Create</AppText> */}
+        c{/* <AppText style={style.buttonText}>Create</AppText> */}
       </AppButton>
       {/* </View> */}
       <AppButton
         style={style.button}
-        onPress={() => HandleDashBoardNavigation('Profile')}>
+        onPress={() => HandleDashBoardNavigation('Search')}>
         <AppIcon
-          group={'MatCom'}
+          group={'Feat'}
           color={Theme.colors.BarColor}
           style={style.IconStyle}
-          name="brain"
+          name="search"
         />
         {/* <AppText style={style.buttonText}>Saved</AppText> */}
       </AppButton>
