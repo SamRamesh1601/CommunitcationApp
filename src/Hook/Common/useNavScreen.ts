@@ -32,6 +32,7 @@ export default function useNavScreen() {
     authNavigation,
     commonNavigation,
     userNavigation,
+    DashBoardNavigation,
     HandleAuthNavigate,
     HandleCommonNavigate,
     HandleUserNavigate,

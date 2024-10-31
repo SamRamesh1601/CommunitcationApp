@@ -1,5 +1,6 @@
 import React from 'react';
 import {GetStorage} from '../Hook/Common/useStorage';
+import AppToast from '../Components/AppToast';
 
 interface User {
   name: string;
@@ -46,6 +47,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({children}) => {
   return (
     <AppContext.Provider value={{authenticated, ...state, setState, useLogout}}>
       {children}
+      <AppToast />
     </AppContext.Provider>
   );
 };

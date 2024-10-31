@@ -6,6 +6,8 @@ import {
   ImageProps,
   TextProps,
   RefreshControlProps,
+  TextInputProps,
+  FlatListProps,
 } from 'react-native';
 
 export interface AppButtonProps extends PressableProps {
@@ -83,4 +85,24 @@ export interface AppBottomSheetProps {
 
 export interface AppRefresherProps extends RefreshControlProps {
   HandleRefresh: () => void;
+}
+
+export interface AppSearchBarProps extends TextInputProps {
+  InputStyle?: ViewStyle;
+  IconStyle?: TextStyle;
+  showSearchIcon?: boolean;
+  showCloseIcon?: boolean;
+  HandleSearch?: () => void;
+  HandleChange: (text: string) => void;
+  value: any;
+}
+
+export interface AppFlatListItemProps {
+  item: any;
+  index: number;
+}
+
+export interface AppFlatListProps extends FlatListProps<any> {
+  RenderItem: (item: AppFlatListItemProps) => React.JSX.Element;
+  data: any;
 }

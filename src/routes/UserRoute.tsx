@@ -11,7 +11,7 @@ export default function UserRoute() {
       screenOptions={{
         headerShown: false,
       }}>
-      <Stack.Screen name="Dashboard" component={DashBoardRoute} />
+      <Stack.Screen name="DashboardRoute" component={DashBoardRoute} />
       <Stack.Screen name="UserRoute" component={Dashboard} />
     </Stack.Navigator>
   );

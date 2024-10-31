@@ -3,6 +3,7 @@ import {Fonts, Theme, SCREEN_WIDTH} from '../Util/Theme';
 import React from 'react';
 import AppIcon from './AppIcon';
 import {AppToastProps} from './types';
+import useAppToast from '../Hook/Common/useAppToast';
 
 export const AndroidToast = (message: string) => {
   ToastAndroid.show(message, ToastAndroid.BOTTOM);
@@ -26,27 +27,8 @@ export const useToast = () => {
   };
 };
 
-export default function AppToast({
-  visible,
-  message,
-  toastType = 'Success',
-  OnClose,
-}: AppToastProps) {
-  const toastColor =
-    toastType === 'Error'
-      ? '#FF232188'
-      : toastType === 'Success'
-      ? '#00CC0088'
-      : '#00CCCC88';
-
-  React.useEffect(() => {
-    if (!visible) return;
-    const timer = setTimeout(() => {
-      OnClose();
-    }, 15000);
-
-    return () => clearTimeout(timer);
-  }, [visible]);
+export default function AppToast() {
+  const {toastColor, visible, message, toastType, OnClose} = useAppToast();
 
   if (!visible) return null;
 

@@ -1,77 +1,90 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, StyleSheet} from 'react-native';
+
 import useNavScreen from '../../Hook/Common/useNavScreen';
-import {Fonts, Theme} from '../../Util/Theme';
-import AppButton from '../AppButton';
+
 import AppText from '../AppText';
 import AppIcon from '../AppIcon';
+import AppButton from '../AppButton';
 
-export default function DashBoardBottomBar() {
+import {Fonts, Theme} from '../../Util/Theme';
+
+import type {AppGroupIconProps} from '../types';
+import type {DashBoardRouteParamList} from '../../Routes/types';
+import type {BottomTabBarProps} from '@react-navigation/bottom-tabs';
+
+export interface RouteListProps {
+  RouteName: keyof DashBoardRouteParamList;
+  RouteGroupIcon: AppGroupIconProps;
+  RouteIcon: string;
+}
+
+export default function DashBoardBottomBar(props: BottomTabBarProps) {
   const {HandleDashBoardNavigation} = useNavScreen();
+
+  const {state} = props;
+  const currentPosition = state?.index ?? 0;
+
+  const OnStepPress = (position: number) => {
+    const RouteName = RouteList[position].RouteName;
+    HandleDashBoardNavigation(RouteName);
+  };
+
+  const RouteList: RouteListProps[] = [
+    {
+      RouteName: 'Search',
+      RouteGroupIcon: 'Feat',
+      RouteIcon: 'search',
+    },
+    {
+      RouteName: 'Dashboard',
+      RouteGroupIcon: 'Feat',
+      RouteIcon: 'home',
+    },
+    {
+      RouteName: 'Shorts',
+      RouteGroupIcon: 'MatCom',
+      RouteIcon: 'at',
+    },
+    {
+      RouteName: 'Create',
+      RouteGroupIcon: 'MatCom',
+      RouteIcon: 'apple-keyboard-command',
+    },
+    {
+      RouteName: 'Profile',
+      RouteGroupIcon: 'Feat',
+      RouteIcon: 'settings',
+    },
+  ];
+
   return (
-    <View style={style.container}>
-      <AppButton
-        style={style.button}
-        onPress={() => HandleDashBoardNavigation('Home')}>
-        <AppIcon
-          group={'Feat'}
-          color={Theme.colors.BarColor}
-          style={style.IconStyle}
-          name="home"
-        />
-        {/* <AppText style={style.buttonText}>Home</AppText> */}
-      </AppButton>
-      <AppButton
-        style={style.button}
-        onPress={() => HandleDashBoardNavigation('Search')}>
-        <AppIcon
-          group={'MatCom'}
-          color={Theme.colors.BarColor}
-          style={style.IconStyle}
-          name="at"
-        />
-        {/* <AppText style={style.buttonText}>Tag</AppText> */}
-      </AppButton>
-      <AppButton
-        style={style.button}
-        onPress={() => HandleDashBoardNavigation('Create')}>
-        <AppIcon
-          color={Theme.colors.BarColor}
-          style={style.IconStyle}
-          group={'MatCom'}
-          name="apple-keyboard-command"
-        />
-        c{/* <AppText style={style.buttonText}>Create</AppText> */}
-      </AppButton>
-      {/* </View> */}
-      <AppButton
-        style={style.button}
-        onPress={() => HandleDashBoardNavigation('Search')}>
-        <AppIcon
-          group={'Feat'}
-          color={Theme.colors.BarColor}
-          style={style.IconStyle}
-          name="search"
-        />
-        {/* <AppText style={style.buttonText}>Saved</AppText> */}
-      </AppButton>
-      <AppButton
-        style={style.button}
-        onPress={() => HandleDashBoardNavigation('Profile')}>
-        <AppIcon
-          group={'Feat'}
-          color={Theme.colors.BarColor}
-          style={style.IconStyle}
-          name="settings"
-        />
-        {/* <AppText style={style.buttonText}>setting</AppText> */}
-      </AppButton>
+    <View style={style.Container}>
+      {RouteList.map((item, index) => {
+        const isActiveTab = currentPosition === index;
+        return (
+          <AppButton
+            key={index}
+            style={style.LogoContainer}
+            onPress={() => {
+              OnStepPress(index);
+            }}>
+            <AppIcon
+              group={item.RouteGroupIcon}
+              color={Theme.colors.BarColor}
+              style={[isActiveTab ? style.ActiveIconsStyle : style.IconStyle]}
+              name={item.RouteIcon}
+            />
+            <AppText style={style.createButtonText}>{item.RouteName}</AppText>
+          </AppButton>
+        );
+      })}
     </View>
   );
 }
 
 const style = StyleSheet.create({
-  container: {
+  Container: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -79,41 +92,27 @@ const style = StyleSheet.create({
     height: Fonts.ModerateScale(72),
   },
   IconStyle: {
-    fontSize: Fonts.ModerateScale(25),
+    fontSize: Fonts.ModerateScale(26),
     color: Theme.colors.BarColor,
   },
-  button: {
-    flex: 1,
-    alignItems: 'center',
-    gap: 6,
+  ActiveIconsStyle: {
+    backgroundColor: Theme.colors.magic,
+    fontSize: Fonts.ModerateScale(15),
+    padding: Fonts.ModerateScale(7),
+    paddingHorizontal: Fonts.ModerateScale(14),
+    borderRadius: 55,
+    color: Theme.colors.Background,
   },
   LogoContainer: {
-    padding: 15,
+    alignItems: 'center',
+    padding: Fonts.ModerateScale(8),
+    justifyContent: 'center',
+    gap: 7,
+    flex: 1,
   },
   createButtonText: {
     fontSize: Fonts.ModerateScale(8),
-    color: Theme.colors.Background,
-  },
-  createButton: {
-    position: 'absolute',
-    borderRadius: Fonts.ModerateScale(5),
-    borderTopEndRadius: Fonts.ModerateScale(50),
-    borderTopStartRadius: Fonts.ModerateScale(50),
-    padding: 15,
-    paddingHorizontal: 25,
-    right: '42%',
-    top: 0,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: Theme.colors.magic,
-  },
-  createButtonIcon: {
-    fontSize: Fonts.ModerateScale(25),
-    color: Theme.colors.Background,
-  },
-  buttonText: {
-    fontSize: Fonts.ModerateScale(9),
+    fontFamily: Fonts.Bold.secondary,
     color: Theme.colors.BarColor,
-    fontFamily: Fonts.Bold.monoText,
   },
 });

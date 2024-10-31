@@ -1,4 +1,4 @@
-import {BottomNavigationProps} from 'react-native-paper';
+import {BottomTabScreenProps} from '@react-navigation/bottom-tabs';
 
 export type RootStackParamList = {
   Auth: undefined;
@@ -8,7 +8,7 @@ export type RootStackParamList = {
 };
 
 export type UserRouteParamList = {
-  Dashboard: undefined;
+  DashboardRoute: undefined;
   UserRoute: undefined;
 };
 
@@ -26,8 +26,13 @@ export type AuthRouteParamList = {
 
 export type DashBoardRouteParamList = {
   Dashboard: undefined;
-  Home: undefined;
+  Shorts: undefined;
   Search: undefined;
   Create: undefined;
   Profile: undefined;
 };
+
+export type DashboardBottomBarProps = BottomTabScreenProps<
+  DashBoardRouteParamList,
+  'Dashboard'
+>;
