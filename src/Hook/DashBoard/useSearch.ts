@@ -1,5 +1,6 @@
 import React from 'react';
 import {useData} from '../../Util/constants';
+import {WorldTalents} from '../../Util/constants/data';
 
 export interface SearchStateProps {
   searchText: string;
@@ -28,7 +29,7 @@ export default function useSearch() {
     setState((prev: SearchStateProps) => ({
       ...prev,
       previousSearchList: UserData,
-      talantList: UserData,
+      talantList: WorldTalents,
     }));
   }, []);
 

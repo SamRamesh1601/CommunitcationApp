@@ -17,11 +17,11 @@ export default function AppImage({
   const HandleImageError = () => {
     setImageSource(DefaultUserImage);
   };
-
+  const IMG_PATH = path ? imageSource : DefaultUserImage;
   return (
     <View style={[styles.wrapper, wrapperstyle]}>
       <Image
-        source={imageSource || DefaultUserImage}
+        source={IMG_PATH}
         style={[styles.image]}
         resizeMode="contain"
         onError={HandleImageError}

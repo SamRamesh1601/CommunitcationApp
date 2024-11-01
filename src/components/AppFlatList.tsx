@@ -37,6 +37,7 @@ interface CustomFlatListProps<ItemT> {
   emptyMessage?: string;
   onRefresh?: () => void;
   refreshing?: boolean;
+  showRefresh?: boolean;
   [key: string]: any;
 }
 
@@ -47,6 +48,7 @@ const AppFlatList = <ItemT,>({
   loading = false,
   emptyMessage = 'No Items Found',
   onRefresh,
+  showRefresh = true,
   ...props
 }: CustomFlatListProps<ItemT>) => {
   const renderItemCallback = useCallback(
@@ -71,16 +73,6 @@ const AppFlatList = <ItemT,>({
       data={data}
       renderItem={renderItemCallback}
       keyExtractor={keyExtractor}
-      style={
-        props.style ?? {
-          flex: 1,
-        }
-      }
-      contentContainerStyle={
-        props.contentContainerStyle ?? {
-          flex: 1,
-        }
-      }
       ListEmptyComponent={
         loading ? (
           <ActivityIndicator />
@@ -89,7 +81,11 @@ const AppFlatList = <ItemT,>({
         )
       }
       refreshControl={
-        <RefreshControl refreshing={refresh} onRefresh={HandleRefresh} />
+        showRefresh ? (
+          <RefreshControl refreshing={refresh} onRefresh={HandleRefresh} />
+        ) : (
+          <></>
+        )
       }
       {...props}
     />
